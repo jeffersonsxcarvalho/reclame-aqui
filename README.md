@@ -118,20 +118,20 @@ Esta aplicação utiliza uma suite de testes unitários (projeto final) para gar
 camada de serviço (`ReclamacaoService`). Os testes foram desenvolvidos utilizando **JUnit 5**, **Mockito** e as 
 facilidades de teste do **Quarkus**.
 
-### Estratégia de Teste
+### 1. Estratégia de Teste
 A cobertura de testes foca no isolamento de dependências, garantindo que a lógica de negócio seja validada 
 sem necessidade de conexão com banco de dados real ou APIs externas. 
 Para isso, utilizamos o padrão **AAA (Arrange, Act, Assert)** e **Mocks** para simular o comportamento do 
 repositório e do cliente REST.
 
-### Tecnologias utilizadas para os testes
+### 2. Tecnologias utilizadas para os testes
 
 *   **JUnit5**
 *   **Mockito**
 *   **Assertions**
 *   **Quarkus Test**
 
-### Cenários Implementados
+### 3. Cenários Implementados
 
 Os testes cobrem cenários positivos (caminhos felizes), alternativos e negativos (caminhos não felizes):
 
@@ -140,13 +140,13 @@ Os testes cobrem cenários positivos (caminhos felizes), alternativos e negativo
 *   **Atualização (`atualizar`):** Tratamento de Ids inexistentes e validação da integridade da atualização dos campos título, descrição e localidade.
 *   **Exclusão (`deletar`):** Verificação da ordem de exclusão correta para o repositório e tratamento de exceções.
 
-### Execução dos Testes
+### 4. Execução dos Testes
 Para executar os testes unitários, utilize o comando:
 ```shell
 mvn test
 ```
 
-### Evidência da execução dos Testes
+### 5. Evidência da execução dos Testes
 
 #### Execução no prompt de comandos
 
