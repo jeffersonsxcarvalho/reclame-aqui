@@ -112,7 +112,7 @@ A API expõe os seguintes endpoints para gerenciar reclamações:
 -   **Descrição:** Deleta uma reclamação pelo seu ID.
 -   **Resposta de Sucesso:** `204 No Content`
 
-## Testes Unitários
+## Testes Unitários (PROJETO-FINAL)
 
 Esta aplicação utiliza uma suite de testes unitários (projeto final) para garantir a confiabilidade das regras de negócio na 
 camada de serviço (`ReclamacaoService`). Os testes foram desenvolvidos utilizando **JUnit 5**, **Mockito** e as 
@@ -159,5 +159,10 @@ Aqui está a execução do suite de testes `mvn test`
 Aqui está o relatório de cobertura dos testes disponibilizados pelo JaCoCo
 
 ![Relatório dos testes](screenshots/tests-coverage-jacoco.png)
+
+### OBSERVAÇÕES
+
+Para utilizar os testes de uma maneira mais organizada optei por refatorar o código do projeto do Marcel para **padrão repository**.
+
 
 
