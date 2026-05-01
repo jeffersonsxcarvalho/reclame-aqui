@@ -34,7 +34,7 @@ public class ReclamacaoServiceTest {
 
     //Aqui eu preferi focar em cada method do service separadamente.
 
-    //1 - Listar
+    //1 - LISTAR
 
     @Test
     @DisplayName("Caminho Feliz: Se o filtro fornulo, tem que retornar todas as reclamacoes.")
@@ -117,7 +117,7 @@ public class ReclamacaoServiceTest {
     }
 
     @Test
-    @DisplayName("Caminho não feliz: Deve persistir sem a API que gera os títulos")
+    @DisplayName("Caminho Não feliz: Deve persistir sem a API que gera os títulos")
     void devePersistirMesmoComFalhaNaApi() {
         // Arrange
         Reclamacao reclamacao = new Reclamacao();
@@ -166,7 +166,7 @@ public class ReclamacaoServiceTest {
     }
 
     @Test
-    @DisplayName("Caminho Triste: Deve retornar null caso o id ñ exista.")
+    @DisplayName("Caminho Não Feliz: Deve retornar null caso o id ñ exista.")
     void deveRetornarNullSeNaoExistir() {
         // Arrange
         Long idInexistente = 999L;
@@ -197,7 +197,7 @@ public class ReclamacaoServiceTest {
     }
 
     @Test
-    @DisplayName("Caminho Triste: Deve lançar uma exceção se o repositório falhar")
+    @DisplayName("Caminho Não Feliz: Deve lançar uma exceção se o repositório falhar")
     void deveLancarExcecaoQuandoRepositorioFalha() {
         // Arrange
         Long idAlvo = 1L;

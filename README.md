@@ -111,3 +111,53 @@ A API expõe os seguintes endpoints para gerenciar reclamações:
 -   **Path:** `/reclamacoes/{id}`
 -   **Descrição:** Deleta uma reclamação pelo seu ID.
 -   **Resposta de Sucesso:** `204 No Content`
+
+## Testes Unitários
+
+Esta aplicação utiliza uma suite de testes unitários (projeto final) para garantir a confiabilidade das regras de negócio na 
+camada de serviço (`ReclamacaoService`). Os testes foram desenvolvidos utilizando **JUnit 5**, **Mockito** e as 
+facilidades de teste do **Quarkus**.
+
+### Estratégia de Teste
+A cobertura de testes foca no isolamento de dependências, garantindo que a lógica de negócio seja validada 
+sem necessidade de conexão com banco de dados real ou APIs externas. 
+Para isso, utilizamos o padrão **AAA (Arrange, Act, Assert)** e **Mocks** para simular o comportamento do 
+repositório e do cliente REST.
+
+### Tecnologias utilizadas para os testes
+
+*   **JUnit5**
+*   **Mockito**
+*   **Assertions**
+*   **Quarkus Test**
+
+### Cenários Implementados
+
+Os testes cobrem cenários positivos (caminhos felizes), alternativos e negativos (caminhos não felizes):
+
+*   **Listagem (`listar`):** Validação de busca com e sem filtros, garantindo a eficiência das queries e o tratamento correto no caso de strings vazias.
+*   **Criação (`criar`):** Verificação da regra de preenchimento automático de títulos. O teste garante que a API externa só seja chamada quando for necessário e que o sistema seja resiliente a falhas na integração.
+*   **Atualização (`atualizar`):** Tratamento de Ids inexistentes e validação da integridade da atualização dos campos título, descrição e localidade.
+*   **Exclusão (`deletar`):** Verificação da ordem de exclusão correta para o repositório e tratamento de exceções.
+
+### Execução dos Testes
+Para executar os testes unitários, utilize o comando:
+```shell
+mvn test
+```
+
+### Evidência da execução dos Testes
+
+#### Execução no prompt de comandos
+
+Aqui está a execução do suite de testes `mvn test`
+
+![Testes no cmd](screenshots/tests-cmd.png)
+
+#### Relatório de cobertura dos testes
+
+Aqui está o relatório de cobertura dos testes disponibilizados pelo JaCoCo
+
+![Relatório dos testes](screenshots/tests-coverage-jacoco.png)
+
+
